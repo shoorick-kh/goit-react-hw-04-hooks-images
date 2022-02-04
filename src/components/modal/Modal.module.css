@@ -1,0 +1,26 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.692);
+  width: 100vw;
+  height: 100vh;
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  padding: 10px;
+  background-color: #fff;
+  min-height: 500px;
+  max-width: 920px;
+  border-radius: 3px;
+}
+
+.img {
+  width: auto;
+  height: auto;
+}
