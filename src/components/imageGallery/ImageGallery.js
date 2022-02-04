@@ -18,13 +18,13 @@ export default function ImageGallery({ imageName }) {
     if (imageName) {
       setStatus('pending');
       setPage(1);
+
       fetchImage(imageName, 1)
         .then(images => {
           if (images.hits.length === 0) {
             setImages([]);
             setHits(images.hits);
             setStatus('resolved');
-
             return toast.error('No data on this request!');
           }
           setImages(images.hits);
@@ -50,7 +50,6 @@ export default function ImageGallery({ imageName }) {
             setStatus('resolved');
             return toast.error('No data on this request!');
           }
-
           setImages(() => [...images, ...imgs.hits]);
           setHits(imgs.hits);
           setStatus('resolved');
