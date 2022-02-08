@@ -68,7 +68,7 @@ export default function ImageGallery({ imageName }) {
         top: document.documentElement.clientHeight + 5000,
         behavior: 'smooth',
       });
-    }, 1000);
+    }, 500);
   };
 
   const onClickMore = () => {
@@ -79,7 +79,7 @@ export default function ImageGallery({ imageName }) {
     <>
       {status === 'idle' && <></>}
       {status === 'rejected' && <h2>{error.message}</h2>}
-      {status === 'resolved' && (
+      {(status === 'resolved' || status === 'pending') && (
         <ul className={s.ImageGallery}>
           {images.map(image => (
             <ImageGalleryItem
